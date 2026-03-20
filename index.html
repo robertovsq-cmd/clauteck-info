@@ -4,263 +4,216 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cerrajeros Barcelona 24 Horas | Clauteck – Tu Cerrajería en el Eixample</title>
-  <meta name="description" content="Cerrajeros en Barcelona 24 horas. Clauteck, tu cerrajería en el Eixample desde hace 15 años. Apertura de puertas, cambio de cerraduras, copia de llaves. Llama: 932 477 923.">
-  <meta name="keywords" content="cerrajeros barcelona, cerrajero 24 horas barcelona, cerrajero eixample, apertura puertas barcelona, copia llaves barcelona, cambio cerraduras barcelona">
-  <link rel="canonical" href="https://clauteck.com/">
+  <meta name="description" content="Cerrajeros en Barcelona 24 horas. Clauteck, cerrajería en el Eixample desde hace 15 años. Apertura de puertas, cambio de cerraduras, copia de llaves. Llama: 932 477 923.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy:      #0a1628;
-      --navy-mid:  #1a3a5c;
-      --gold:      #f5a623;
-      --gold-dark: #d4891a;
-      --white:     #ffffff;
-      --off-white: #f4f8ff;
-      --border:    #dce6f0;
-      --gray:      #8a9ab5;
-      --text:      #1a2340;
-      --text-soft: #4a5568;
-      --green:     #25D366;
+      --navy:#0a1628; --navy-mid:#1a3a5c; --gold:#f5a623; --gold-dark:#d4891a;
+      --white:#ffffff; --off:#f4f8ff; --border:#dce6f0; --gray:#8a9ab5;
+      --text:#1a2340; --soft:#4a5568; --green:#25D366;
     }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--text); overflow-x:hidden; }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:"DM Sans",sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
 
-    /* TOPBAR */
-    .topbar {
-      position:fixed; top:0; left:0; right:0; z-index:999;
-      background:var(--navy);
-      display:flex; align-items:center; justify-content:space-between;
-      padding:0 28px; height:56px;
-      box-shadow:0 2px 24px rgba(0,0,0,0.35);
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:60px;box-shadow:0 2px 24px rgba(0,0,0,.35);}
+    .topbar-logo img{height:32px;display:block;}
+    .topbar-nav{display:flex;gap:18px;align-items:center;}
+    .topbar-nav a{color:var(--gray);font-size:.87rem;text-decoration:none;transition:color .2s;}
+    .topbar-nav a:hover{color:var(--white);}
+    .topbar-ctas{display:flex;gap:8px;}
+    .topbar-ctas a{padding:8px 14px;border-radius:7px;font-weight:600;font-size:.83rem;text-decoration:none;transition:all .2s;white-space:nowrap;}
+    .tb-call{background:var(--gold);color:var(--navy);}
+    .tb-call:hover{background:var(--gold-dark);}
+    .tb-wa{background:var(--green);color:var(--white);}
+    .tb-wa:hover{opacity:.85;}
+
+    .hero{min-height:100vh;background:linear-gradient(150deg,var(--navy) 0%,#0d2040 50%,var(--navy-mid) 100%);display:flex;align-items:center;padding:100px 24px 72px;position:relative;overflow:hidden;}
+    .hero-glow-1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,166,35,.13) 0%,transparent 68%);pointer-events:none;}
+    .hero-glow-2{position:absolute;bottom:-80px;left:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(37,211,102,.06) 0%,transparent 65%);pointer-events:none;}
+    .hero-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+    .hero-left{animation:fadeUp .8s ease both;}
+    .hero-right{animation:fadeUp .8s .15s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+    .hero-logo{margin-bottom:28px;}
+    .hero-logo img{height:44px;filter:brightness(0) invert(1);}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.4);color:var(--gold);padding:7px 16px;border-radius:40px;font-size:.82rem;font-weight:600;margin-bottom:24px;letter-spacing:.04em;}
+    .hero h1{font-family:"Syne",sans-serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:20px;}
+    .hero h1 em{color:var(--gold);font-style:normal;}
+    .hero-sub{font-size:1.05rem;color:#b8d4f0;line-height:1.75;margin-bottom:32px;}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;}
+    .btn-gold{background:var(--gold);color:var(--navy);padding:15px 28px;border-radius:9px;font-weight:700;font-size:.97rem;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(245,166,35,.3);}
+    .btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);}
+    .btn-wa{background:var(--green);color:var(--white);padding:15px 28px;border-radius:9px;font-weight:700;font-size:.97rem;text-decoration:none;transition:all .2s;}
+    .btn-wa:hover{opacity:.85;transform:translateY(-2px);}
+    .btn-outline{background:transparent;color:var(--white);padding:15px 28px;border-radius:9px;font-weight:600;font-size:.97rem;text-decoration:none;transition:all .2s;border:1.5px solid rgba(255,255,255,.3);}
+    .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.07);}
+
+    .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:32px 28px;backdrop-filter:blur(8px);}
+    .hero-card h3{font-family:"Syne",sans-serif;color:var(--gold);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;}
+    .info-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+    .info-row:last-child{border-bottom:none;padding-bottom:0;}
+    .info-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+    .info-title{color:var(--white);font-weight:600;font-size:.95rem;}
+    .info-desc{color:var(--gray);font-size:.85rem;margin-top:2px;}
+
+    .stats-bar{background:var(--gold);padding:28px 24px;}
+    .stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;}
+    .stat{text-align:center;}
+    .stat-num{font-family:"Syne",sans-serif;font-size:2.2rem;font-weight:800;color:var(--navy);display:block;}
+    .stat-lbl{font-size:.78rem;font-weight:700;color:var(--navy);opacity:.7;text-transform:uppercase;letter-spacing:.06em;}
+
+    .section{padding:80px 24px;}
+    .section-inner{max-width:900px;margin:0 auto;}
+    .section-tag{display:inline-block;background:rgba(26,58,92,.08);color:var(--navy-mid);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px;}
+    .section-title{font-family:"Syne",sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+    .section-title em{color:var(--gold);font-style:normal;}
+    .section-sub{font-size:1rem;color:var(--soft);line-height:1.7;margin-bottom:40px;max-width:620px;}
+
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+    .service-card{background:var(--off);border:1.5px solid var(--border);border-radius:14px;padding:24px 20px;transition:all .25s;text-decoration:none;color:inherit;display:block;}
+    .service-card:hover{border-color:var(--navy-mid);box-shadow:0 8px 32px rgba(26,58,92,.12);transform:translateY(-3px);}
+    .service-icon{font-size:2rem;margin-bottom:12px;display:block;}
+    .service-name{font-family:"Syne",sans-serif;font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:6px;}
+    .service-desc{font-size:.88rem;color:var(--soft);line-height:1.6;}
+    .service-link{display:inline-block;margin-top:12px;font-size:.83rem;font-weight:700;color:var(--navy-mid);}
+
+    .barrios-section{background:var(--navy);}
+    .barrios-section .section-tag{background:rgba(245,166,35,.15);color:var(--gold);}
+    .barrios-section .section-title{color:var(--white);}
+    .barrios-section .section-sub{color:#b8d4f0;}
+    .barrios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;}
+    .barrio-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 16px;transition:all .2s;}
+    .barrio-card:hover{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.4);}
+    .barrio-card.featured{background:rgba(245,166,35,.12);border-color:rgba(245,166,35,.5);}
+    .barrio-name{font-family:"Syne",sans-serif;font-weight:700;font-size:.95rem;color:var(--white);margin-bottom:4px;}
+    .barrio-time{font-size:.82rem;color:var(--gold);font-weight:600;}
+    .barrio-note{font-size:.78rem;color:var(--gray);margin-top:3px;}
+
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+    .step{background:var(--off);border-radius:14px;padding:28px 20px;border-top:3px solid var(--navy-mid);}
+    .step-num{font-family:"Syne",sans-serif;font-size:3rem;font-weight:800;color:rgba(26,58,92,.1);line-height:1;margin-bottom:12px;}
+    .step-title{font-weight:700;color:var(--navy);font-size:.97rem;margin-bottom:7px;}
+    .step-desc{font-size:.87rem;color:var(--soft);line-height:1.6;}
+
+    .reviews-section{background:var(--off);}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+    .review-card{background:var(--white);border-radius:14px;padding:22px 20px;border-left:3px solid var(--gold);box-shadow:0 2px 12px rgba(26,58,92,.06);}
+    .review-stars{color:var(--gold);font-size:1rem;margin-bottom:10px;}
+    .review-text{font-size:.93rem;color:var(--text);line-height:1.65;margin-bottom:12px;font-style:italic;}
+    .review-author{font-size:.8rem;color:var(--gray);font-weight:600;}
+
+    .faq-list{display:flex;flex-direction:column;}
+    .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+    .faq-q{font-weight:700;font-size:.97rem;color:var(--navy);margin-bottom:8px;}
+    .faq-a{font-size:.92rem;color:var(--soft);line-height:1.7;}
+    .faq-a a{color:var(--navy-mid);font-weight:600;}
+
+    .about-section{background:var(--navy-mid);}
+    .about-section .section-tag{background:rgba(245,166,35,.15);color:var(--gold);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    .about-text{color:#c8dcf0;font-size:.97rem;line-height:1.8;}
+    .about-text p{margin-bottom:16px;}
+    .about-text strong{color:var(--white);}
+    .about-facts{display:flex;flex-direction:column;gap:14px;}
+    .fact{background:rgba(255,255,255,.07);border-radius:12px;padding:18px 16px;display:flex;align-items:flex-start;gap:14px;}
+    .fact-icon{font-size:1.5rem;flex-shrink:0;}
+    .fact-title{color:var(--white);font-weight:700;font-size:.93rem;}
+    .fact-desc{color:var(--gray);font-size:.83rem;margin-top:3px;}
+
+    /* BLOG SECTION */
+    .blog-section{background:var(--off);}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+    .blog-card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:22px 18px;transition:all .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
+    .blog-card:hover{border-color:var(--navy-mid);box-shadow:0 8px 32px rgba(26,58,92,.1);transform:translateY(-3px);}
+    .blog-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:10px;}
+    .tag-urgente{background:#fff0f0;color:#c0392b;}
+    .tag-consejos{background:#fff8e6;color:#b07d00;}
+    .tag-productos{background:#f0f4ff;color:#1a3a5c;}
+    .tag-precios{background:#f0fff4;color:#1a7a3c;}
+    .tag-barrio{background:#faf0ff;color:#6b21a8;}
+    .blog-card h3{font-family:"Syne",sans-serif;font-size:.97rem;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:8px;flex:1;}
+    .blog-card .blog-link{font-size:.82rem;font-weight:700;color:var(--navy-mid);margin-top:12px;display:inline-block;}
+
+    .cta-section{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:80px 24px;text-align:center;}
+    .cta-section h2{font-family:"Syne",sans-serif;font-size:clamp(1.6rem,3.5vw,2.5rem);color:var(--white);margin-bottom:14px;}
+    .cta-section p{color:#b8d4f0;margin-bottom:32px;font-size:1.05rem;}
+    .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;}
+
+    footer{background:var(--navy);padding:36px 24px;border-top:2px solid rgba(245,166,35,.3);}
+    .footer-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;}
+    .footer-logo img{height:28px;filter:brightness(0) invert(1);opacity:.8;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px;}
+    .footer-links a{color:var(--gray);font-size:.87rem;text-decoration:none;transition:color .2s;}
+    .footer-links a:hover{color:var(--white);}
+    .footer-copy{width:100%;text-align:center;color:var(--gray);font-size:.8rem;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);}
+
+    .seo-text{padding:36px 24px;background:var(--off);border-top:1px solid var(--border);}
+    .seo-text-inner{max-width:900px;margin:0 auto;font-size:.84rem;color:var(--gray);line-height:1.9;}
+    .seo-text-inner a{color:var(--navy-mid);}
+
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;gap:36px;}
+      .hero-right{display:none;}
+      .about-grid{grid-template-columns:1fr;}
+      .topbar-ctas .tb-wa{display:none;}
+      .topbar-nav{display:none;}
     }
-    .topbar-brand { font-family:'Syne',sans-serif; font-weight:800; font-size:1.15rem; color:var(--white); letter-spacing:0.06em; text-decoration:none; }
-    .topbar-brand span { color:var(--gold); }
-    .topbar-ctas { display:flex; gap:8px; }
-    .topbar-ctas a { padding:8px 16px; border-radius:7px; font-weight:600; font-size:.85rem; text-decoration:none; transition:all .2s; white-space:nowrap; }
-    .tb-call { background:var(--gold); color:var(--navy); }
-    .tb-call:hover { background:var(--gold-dark); }
-    .tb-wa { background:var(--green); color:var(--white); }
-    .tb-wa:hover { opacity:.85; }
-
-    /* HERO */
-    .hero {
-      min-height:100vh;
-      background:linear-gradient(150deg, var(--navy) 0%, #0d2040 50%, var(--navy-mid) 100%);
-      display:flex; align-items:center;
-      padding:100px 24px 72px;
-      position:relative; overflow:hidden;
-    }
-    .hero-glow-1 { position:absolute; top:-100px; right:-100px; width:600px; height:600px; background:radial-gradient(circle, rgba(245,166,35,.13) 0%, transparent 68%); pointer-events:none; }
-    .hero-glow-2 { position:absolute; bottom:-80px; left:-80px; width:500px; height:500px; background:radial-gradient(circle, rgba(37,211,102,.06) 0%, transparent 65%); pointer-events:none; }
-    .hero-grid { max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; position:relative; z-index:2; }
-    .hero-left { animation:fadeUp .8s ease both; }
-    .hero-right { animation:fadeUp .8s .15s ease both; }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,.14); border:1px solid rgba(245,166,35,.4); color:var(--gold); padding:7px 16px; border-radius:40px; font-size:.82rem; font-weight:600; margin-bottom:24px; letter-spacing:.04em; }
-    .hero h1 { font-family:'Syne',sans-serif; font-size:clamp(2rem,4.5vw,3rem); font-weight:800; color:var(--white); line-height:1.15; margin-bottom:20px; }
-    .hero h1 em { color:var(--gold); font-style:normal; }
-    .hero-sub { font-size:1.05rem; color:#b8d4f0; line-height:1.75; margin-bottom:32px; }
-    .hero-ctas { display:flex; flex-wrap:wrap; gap:10px; }
-
-    .btn-gold { background:var(--gold); color:var(--navy); padding:15px 28px; border-radius:9px; font-weight:700; font-size:.97rem; text-decoration:none; transition:all .2s; box-shadow:0 4px 20px rgba(245,166,35,.3); }
-    .btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); }
-    .btn-wa-hero { background:var(--green); color:var(--white); padding:15px 28px; border-radius:9px; font-weight:700; font-size:.97rem; text-decoration:none; transition:all .2s; }
-    .btn-wa-hero:hover { opacity:.85; transform:translateY(-2px); }
-    .btn-outline { background:transparent; color:var(--white); padding:15px 28px; border-radius:9px; font-weight:600; font-size:.97rem; text-decoration:none; transition:all .2s; border:1.5px solid rgba(255,255,255,.3); }
-    .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,.07); }
-
-    /* Hero card */
-    .hero-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:32px 28px; backdrop-filter:blur(8px); }
-    .hero-card h3 { font-family:'Syne',sans-serif; color:var(--gold); font-size:1rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:20px; }
-    .info-row { display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.08); }
-    .info-row:last-child { border-bottom:none; padding-bottom:0; }
-    .info-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
-    .info-title { color:var(--white); font-weight:600; font-size:.95rem; }
-    .info-desc { color:var(--gray); font-size:.85rem; margin-top:2px; }
-
-    /* STATS BAR */
-    .stats-bar { background:var(--gold); padding:28px 24px; }
-    .stats-inner { max-width:900px; margin:0 auto; display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px; }
-    .stat { text-align:center; }
-    .stat-num { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; color:var(--navy); display:block; }
-    .stat-lbl { font-size:.78rem; font-weight:700; color:var(--navy); opacity:.7; text-transform:uppercase; letter-spacing:.06em; }
-
-    /* SECTIONS */
-    .section { padding:80px 24px; }
-    .section-inner { max-width:900px; margin:0 auto; }
-    .section-tag { display:inline-block; background:rgba(26,58,92,.08); color:var(--navy-mid); font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:14px; }
-    .section-title { font-family:'Syne',sans-serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; color:var(--navy); line-height:1.2; margin-bottom:12px; }
-    .section-title em { color:var(--gold); font-style:normal; }
-    .section-sub { font-size:1rem; color:var(--text-soft); line-height:1.7; margin-bottom:40px; max-width:620px; }
-
-    /* SERVICES */
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
-    .service-card { background:var(--off-white); border:1.5px solid var(--border); border-radius:14px; padding:24px 20px; transition:all .25s; text-decoration:none; color:inherit; display:block; }
-    .service-card:hover { border-color:var(--navy-mid); box-shadow:0 8px 32px rgba(26,58,92,.12); transform:translateY(-3px); }
-    .service-icon { font-size:2rem; margin-bottom:12px; display:block; }
-    .service-name { font-family:'Syne',sans-serif; font-weight:700; font-size:1rem; color:var(--navy); margin-bottom:6px; }
-    .service-desc { font-size:.88rem; color:var(--text-soft); line-height:1.6; }
-    .service-link { display:inline-block; margin-top:12px; font-size:.83rem; font-weight:700; color:var(--navy-mid); }
-
-    /* BARRIOS */
-    .barrios-section { background:var(--navy); }
-    .barrios-section .section-tag { background:rgba(245,166,35,.15); color:var(--gold); }
-    .barrios-section .section-title { color:var(--white); }
-    .barrios-section .section-sub { color:#b8d4f0; }
-    .barrios-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:12px; }
-    .barrio-card { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:18px 16px; transition:all .2s; }
-    .barrio-card:hover { background:rgba(245,166,35,.1); border-color:rgba(245,166,35,.4); }
-    .barrio-card.featured { background:rgba(245,166,35,.12); border-color:rgba(245,166,35,.5); }
-    .barrio-name { font-family:'Syne',sans-serif; font-weight:700; font-size:.95rem; color:var(--white); margin-bottom:4px; }
-    .barrio-time { font-size:.82rem; color:var(--gold); font-weight:600; }
-    .barrio-note { font-size:.78rem; color:var(--gray); margin-top:3px; }
-
-    /* PROCESS */
-    .process-steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px; }
-    .step { background:var(--off-white); border-radius:14px; padding:28px 20px; border-top:3px solid var(--navy-mid); }
-    .step-num { font-family:'Syne',sans-serif; font-size:3rem; font-weight:800; color:rgba(26,58,92,.1); line-height:1; margin-bottom:12px; }
-    .step-title { font-weight:700; color:var(--navy); font-size:.97rem; margin-bottom:7px; }
-    .step-desc { font-size:.87rem; color:var(--text-soft); line-height:1.6; }
-
-    /* REVIEWS */
-    .reviews-section { background:var(--off-white); }
-    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
-    .review-card { background:var(--white); border-radius:14px; padding:22px 20px; border-left:3px solid var(--gold); box-shadow:0 2px 12px rgba(26,58,92,.06); }
-    .review-stars { color:var(--gold); font-size:1rem; margin-bottom:10px; }
-    .review-text { font-size:.93rem; color:var(--text); line-height:1.65; margin-bottom:12px; font-style:italic; }
-    .review-author { font-size:.8rem; color:var(--gray); font-weight:600; }
-
-    /* FAQ */
-    .faq-list { display:flex; flex-direction:column; }
-    .faq-item { border-bottom:1px solid var(--border); padding:20px 0; }
-    .faq-q { font-weight:700; font-size:.97rem; color:var(--navy); margin-bottom:8px; }
-    .faq-a { font-size:.92rem; color:var(--text-soft); line-height:1.7; }
-    .faq-a a { color:var(--navy-mid); font-weight:600; }
-
-    /* ABOUT */
-    .about-section { background:var(--navy-mid); }
-    .about-section .section-tag { background:rgba(245,166,35,.15); color:var(--gold); }
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
-    .about-text { color:#c8dcf0; font-size:.97rem; line-height:1.8; }
-    .about-text p { margin-bottom:16px; }
-    .about-text strong { color:var(--white); }
-    .about-facts { display:flex; flex-direction:column; gap:14px; }
-    .fact { background:rgba(255,255,255,.07); border-radius:12px; padding:18px 16px; display:flex; align-items:flex-start; gap:14px; }
-    .fact-icon { font-size:1.5rem; flex-shrink:0; }
-    .fact-title { color:var(--white); font-weight:700; font-size:.93rem; }
-    .fact-desc { color:var(--gray); font-size:.83rem; margin-top:3px; }
-
-    /* CTA */
-    .cta-section { background:linear-gradient(135deg, var(--navy), var(--navy-mid)); padding:80px 24px; text-align:center; }
-    .cta-section h2 { font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3.5vw,2.5rem); color:var(--white); margin-bottom:14px; }
-    .cta-section p { color:#b8d4f0; margin-bottom:32px; font-size:1.05rem; }
-    .cta-btns { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
-
-    /* FOOTER */
-    footer { background:var(--navy); padding:36px 24px; border-top:2px solid rgba(245,166,35,.3); }
-    .footer-inner { max-width:900px; margin:0 auto; display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; }
-    .footer-brand { font-family:'Syne',sans-serif; font-size:1.1rem; color:var(--white); font-weight:800; }
-    .footer-brand span { color:var(--gold); }
-    .footer-links { display:flex; flex-wrap:wrap; gap:16px; }
-    .footer-links a { color:var(--gray); font-size:.87rem; text-decoration:none; transition:color .2s; }
-    .footer-links a:hover { color:var(--white); }
-    .footer-copy { width:100%; text-align:center; color:var(--gray); font-size:.8rem; margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,.07); }
-
-    /* SEO TEXT */
-    .seo-text { padding:36px 24px; background:var(--off-white); border-top:1px solid var(--border); }
-    .seo-text-inner { max-width:900px; margin:0 auto; font-size:.84rem; color:var(--gray); line-height:1.9; }
-    .seo-text-inner a { color:var(--navy-mid); }
-
-    /* RESPONSIVE */
-    @media (max-width:768px) {
-      .hero-grid { grid-template-columns:1fr; gap:36px; }
-      .hero-right { display:none; }
-      .about-grid { grid-template-columns:1fr; }
-      .topbar-ctas .tb-wa { display:none; }
-    }
-    @media (max-width:480px) {
-      .hero-ctas { flex-direction:column; }
-      .hero-ctas a { text-align:center; }
-      .cta-btns { flex-direction:column; align-items:center; }
+    @media(max-width:480px){
+      .hero-ctas,.cta-btns{flex-direction:column;}
+      .hero-ctas a,.cta-btns a{text-align:center;}
     }
   </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <nav class="topbar">
-  <a href="https://clauteck.com/" target="_blank" class="topbar-brand">CLAUT<span>ECK</span></a>
+  <div class="topbar-logo">
+    <a href="index.html"><img src="data:image/png;base64,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" alt="Clauteck Cerrajería Barcelona"></a>
+  </div>
+  <div class="topbar-nav">
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://clauteck.com/" target="_blank">clauteck.com</a>
+  </div>
   <div class="topbar-ctas">
     <a href="tel:+34932477923" class="tb-call">📞 932 477 923</a>
     <a href="https://wa.me/34932477923?text=Hola%2C+necesito+un+cerrajero+en+Barcelona" class="tb-wa">💬 WhatsApp</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
   <div class="hero-grid">
     <div class="hero-left">
+      <div class="hero-logo">
+        <img src="data:image/png;base64,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" alt="Clauteck Cerrajería Barcelona">
+      </div>
       <div class="hero-badge">⚡ Cerrajeros en Barcelona · 24h · Llegamos en 15 min</div>
       <h1>Tu cerrajería<br>de confianza<br>en <em>Barcelona</em></h1>
-      <p class="hero-sub">
-        Más de 15 años abriendo puertas, cambiando cerraduras y haciendo copias de llaves en toda la ciudad.<br>
-        <strong style="color:var(--gold);">Tienda en Eixample · Muntaner 127.</strong> Técnicos en todos los barrios.
-      </p>
+      <p class="hero-sub">Más de 15 años abriendo puertas, cambiando cerraduras y haciendo copias de llaves en toda la ciudad.<br><strong style="color:var(--gold);">Tienda en Eixample · Muntaner 127.</strong> Técnicos en todos los barrios.</p>
       <div class="hero-ctas">
         <a href="tel:+34932477923" class="btn-gold">📞 Llamar ahora</a>
-        <a href="https://wa.me/34932477923?text=Hola%2C+necesito+un+cerrajero+en+Barcelona" class="btn-wa-hero">💬 WhatsApp</a>
+        <a href="https://wa.me/34932477923?text=Hola%2C+necesito+un+cerrajero+en+Barcelona" class="btn-wa">💬 WhatsApp</a>
         <a href="https://clauteck.com/" target="_blank" class="btn-outline">🌐 clauteck.com</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-card">
         <h3>🔐 Clauteck · Eixample</h3>
-        <div class="info-row">
-          <span class="info-icon">📍</span>
-          <div>
-            <div class="info-title">Calle Muntaner 127, Barcelona</div>
-            <div class="info-desc">Tienda física en el corazón del Eixample</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <span class="info-icon">🕐</span>
-          <div>
-            <div class="info-title">Servicio urgente 24h · 365 días</div>
-            <div class="info-desc">Domingos, festivos, madrugada — siempre disponibles</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <span class="info-icon">⚡</span>
-          <div>
-            <div class="info-title">Llegada en 15 minutos</div>
-            <div class="info-desc">Técnicos propios en toda Barcelona</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <span class="info-icon">💰</span>
-          <div>
-            <div class="info-title">Presupuesto cerrado por teléfono</div>
-            <div class="info-desc">El precio acordado es el precio final. Sin sorpresas.</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <span class="info-icon">⭐</span>
-          <div>
-            <div class="info-title">+500 clientes · 5 estrellas Google</div>
-            <div class="info-desc">Samsung, Ray-Ban, Primor y cientos de vecinos</div>
-          </div>
-        </div>
+        <div class="info-row"><span class="info-icon">📍</span><div><div class="info-title">Calle Muntaner 127, Barcelona</div><div class="info-desc">Tienda física en el corazón del Eixample</div></div></div>
+        <div class="info-row"><span class="info-icon">🕐</span><div><div class="info-title">Servicio urgente 24h · 365 días</div><div class="info-desc">Domingos, festivos, madrugada — siempre disponibles</div></div></div>
+        <div class="info-row"><span class="info-icon">⚡</span><div><div class="info-title">Llegada en 15 minutos</div><div class="info-desc">Técnicos propios en toda Barcelona</div></div></div>
+        <div class="info-row"><span class="info-icon">💰</span><div><div class="info-title">Presupuesto cerrado por teléfono</div><div class="info-desc">El precio acordado es el precio final. Sin sorpresas.</div></div></div>
+        <div class="info-row"><span class="info-icon">⭐</span><div><div class="info-title">+500 clientes · 5 estrellas Google</div><div class="info-desc">Samsung, Ray-Ban, Primor y cientos de vecinos</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat"><span class="stat-num">+15</span><span class="stat-lbl">Años experiencia</span></div>
@@ -271,313 +224,158 @@
   </div>
 </div>
 
-<!-- SERVICIOS -->
 <section class="section">
   <div class="section-inner">
     <span class="section-tag">Servicios</span>
     <h2 class="section-title">Todo lo que necesitas,<br><em>en un solo sitio</em></h2>
     <p class="section-sub">Cerrajería completa para hogares, negocios y comunidades en Barcelona.</p>
     <div class="services-grid">
-      <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank" class="service-card">
-        <span class="service-icon">🚪</span>
-        <div class="service-name">Apertura de puertas</div>
-        <div class="service-desc">¿Te quedaste fuera? Abrimos sin dañar la puerta ni la cerradura. Urgente o programada.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank" class="service-card">
-        <span class="service-icon">🔒</span>
-        <div class="service-name">Cambio de cerraduras</div>
-        <div class="service-desc">Bombines antibumping de alta seguridad. Mottura, Tesa, FAC. Instalación rápida.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/copia-llaves/" target="_blank" class="service-card">
-        <span class="service-icon">🔑</span>
-        <div class="service-name">Copia de llaves</div>
-        <div class="service-desc">Duplicados para todo tipo de llaves, incluyendo modelos antiguos y difíciles.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/domotica-barcelona/" target="_blank" class="service-card">
-        <span class="service-icon">📱</span>
-        <div class="service-name">Cerraduras Nuki</div>
-        <div class="service-desc">Instaladores oficiales Nuki en Barcelona. Domótica de seguridad para hogar y negocios.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/puertas-acorazadas/" target="_blank" class="service-card">
-        <span class="service-icon">🛡️</span>
-        <div class="service-name">Puertas acorazadas</div>
-        <div class="service-desc">Grado 3, 4 y 5. Antiokupa, cortafuegos, trasteros. Máxima seguridad.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/apertura-coches-barcelona/" target="_blank" class="service-card">
-        <span class="service-icon">🚗</span>
-        <div class="service-name">Apertura y llaves de coche</div>
-        <div class="service-desc">Apertura urgente y duplicado de llaves de coche con chip y mando a distancia.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/apertura-cajas-fuertes-barcelona/" target="_blank" class="service-card">
-        <span class="service-icon">🗄️</span>
-        <div class="service-name">Apertura de cajas fuertes</div>
-        <div class="service-desc">Apertura profesional sin daños cuando has perdido la combinación o la llave.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
-      <a href="https://clauteck.com/mantenimiento-retail/" target="_blank" class="service-card">
-        <span class="service-icon">🏪</span>
-        <div class="service-name">Cerrajería para negocios</div>
-        <div class="service-desc">Mantenimiento retail y comunidades de vecinos. Samsung, Ray-Ban, Primor confían en nosotros.</div>
-        <span class="service-link">Ver servicio →</span>
-      </a>
+      <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank" class="service-card"><span class="service-icon">🚪</span><div class="service-name">Apertura de puertas</div><div class="service-desc">¿Te quedaste fuera? Abrimos sin dañar la puerta ni la cerradura. Urgente o programada.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank" class="service-card"><span class="service-icon">🔒</span><div class="service-name">Cambio de cerraduras</div><div class="service-desc">Bombines antibumping MTL800 y cerraduras de alta seguridad. Mottura, Tesa, FAC.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/copia-llaves/" target="_blank" class="service-card"><span class="service-icon">🔑</span><div class="service-name">Copia de llaves</div><div class="service-desc">Duplicados para todo tipo de llaves, incluyendo modelos antiguos y difíciles.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/domotica-barcelona/" target="_blank" class="service-card"><span class="service-icon">📱</span><div class="service-name">Nuki Smart Lock Pro</div><div class="service-desc">Instaladores oficiales Nuki en Barcelona. Domótica de seguridad para hogar y negocios.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/puertas-acorazadas/" target="_blank" class="service-card"><span class="service-icon">🛡️</span><div class="service-name">Puertas acorazadas</div><div class="service-desc">Grado 3, 4 y 5. Antiokupa, cortafuegos, trasteros. Máxima seguridad.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/apertura-coches-barcelona/" target="_blank" class="service-card"><span class="service-icon">🚗</span><div class="service-name">Apertura y llaves de coche</div><div class="service-desc">Apertura urgente y duplicado de llaves de coche con chip y mando a distancia.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/apertura-cajas-fuertes-barcelona/" target="_blank" class="service-card"><span class="service-icon">🗄️</span><div class="service-name">Apertura de cajas fuertes</div><div class="service-desc">Apertura profesional sin daños cuando has perdido la combinación o la llave.</div><span class="service-link">Ver servicio →</span></a>
+      <a href="https://clauteck.com/mantenimiento-retail/" target="_blank" class="service-card"><span class="service-icon">🏪</span><div class="service-name">Cerrajería para negocios</div><div class="service-desc">Mantenimiento retail y comunidades. Samsung, Ray-Ban, Primor confían en nosotros.</div><span class="service-link">Ver servicio →</span></a>
     </div>
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
-<section class="section" style="background:var(--off-white);padding-top:60px;padding-bottom:60px;">
+<section class="section" style="background:var(--off);padding-top:60px;padding-bottom:60px;">
   <div class="section-inner">
     <span class="section-tag">Proceso</span>
     <h2 class="section-title">¿Cómo funciona?</h2>
     <p class="section-sub">En 3 pasos desde que nos llamas hasta que tienes tu puerta abierta.</p>
     <div class="process-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">📞 Llama o escribe</div>
-        <div class="step-desc">Llámanos al <a href="tel:+34932477923" style="color:var(--navy-mid);font-weight:700;">932 477 923</a> o por WhatsApp. Te damos el precio cerrado al momento, antes de desplazarnos. Sin letra pequeña.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">⚡ Activamos al técnico</div>
-        <div class="step-desc">Localizamos al técnico más cercano a tu barrio. Cobertura total en Barcelona — llegamos en 15 minutos o menos.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">✅ Problema resuelto</div>
-        <div class="step-desc">Abrimos, cambiamos o duplicamos. El precio final es exactamente el acordado. Con garantía en todos los trabajos.</div>
-      </div>
+      <div class="step"><div class="step-num">01</div><div class="step-title">📞 Llama o escribe</div><div class="step-desc">Llámanos al <a href="tel:+34932477923" style="color:var(--navy-mid);font-weight:700;">932 477 923</a> o por WhatsApp. Te damos el precio cerrado al momento. Sin letra pequeña.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title">⚡ Activamos al técnico</div><div class="step-desc">Localizamos al técnico más cercano a tu barrio. Cobertura total en Barcelona — llegamos en 15 minutos o menos.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title">✅ Problema resuelto</div><div class="step-desc">Abrimos, cambiamos o duplicamos. El precio final es exactamente el acordado. Con garantía en todos los trabajos.</div></div>
     </div>
   </div>
 </section>
 
-<!-- BARRIOS -->
 <section class="section barrios-section">
   <div class="section-inner">
     <span class="section-tag">Cobertura</span>
     <h2 class="section-title">Cerrajeros en <em>toda Barcelona</em></h2>
     <p class="section-sub">Tienda en Eixample. Técnicos en todos los barrios de la ciudad.</p>
     <div class="barrios-grid">
-      <div class="barrio-card featured">
-        <div class="barrio-name">📍 Eixample</div>
-        <div class="barrio-time">⚡ 5–8 minutos</div>
-        <div class="barrio-note">Tienda en Muntaner 127</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Barceloneta</div>
-        <div class="barrio-time">⚡ 10 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Gràcia</div>
-        <div class="barrio-time">⚡ 10 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Sarrià</div>
-        <div class="barrio-time">⚡ 12 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Ciutat Vella</div>
-        <div class="barrio-time">⚡ 12 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">El Born</div>
-        <div class="barrio-time">⚡ 12 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">El Raval</div>
-        <div class="barrio-time">⚡ 12 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Poble Sec</div>
-        <div class="barrio-time">⚡ 13 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Sants</div>
-        <div class="barrio-time">⚡ 14 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Les Corts</div>
-        <div class="barrio-time">⚡ 14 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Vila Olímpica</div>
-        <div class="barrio-time">⚡ 14 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Sant Pere</div>
-        <div class="barrio-time">⚡ 14 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Horta</div>
-        <div class="barrio-time">⚡ 15 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Sant Andreu</div>
-        <div class="barrio-time">⚡ 15 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Sant Martí</div>
-        <div class="barrio-time">⚡ 15 minutos</div>
-      </div>
-      <div class="barrio-card">
-        <div class="barrio-name">Nou Barris</div>
-        <div class="barrio-time">⚡ 18 minutos</div>
-      </div>
+      <div class="barrio-card featured"><div class="barrio-name">📍 Eixample</div><div class="barrio-time">⚡ 5–8 minutos</div><div class="barrio-note">Tienda en Muntaner 127</div></div>
+      <div class="barrio-card"><div class="barrio-name">Barceloneta</div><div class="barrio-time">⚡ 10 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Gràcia</div><div class="barrio-time">⚡ 10 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Sarrià</div><div class="barrio-time">⚡ 12 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Ciutat Vella</div><div class="barrio-time">⚡ 12 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">El Born</div><div class="barrio-time">⚡ 12 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">El Raval</div><div class="barrio-time">⚡ 12 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Poble Sec</div><div class="barrio-time">⚡ 13 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Sants</div><div class="barrio-time">⚡ 14 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Les Corts</div><div class="barrio-time">⚡ 14 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Vila Olímpica</div><div class="barrio-time">⚡ 14 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Sant Pere</div><div class="barrio-time">⚡ 14 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Horta</div><div class="barrio-time">⚡ 15 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Sant Andreu</div><div class="barrio-time">⚡ 15 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Sant Martí</div><div class="barrio-time">⚡ 15 minutos</div></div>
+      <div class="barrio-card"><div class="barrio-name">Nou Barris</div><div class="barrio-time">⚡ 18 minutos</div></div>
     </div>
   </div>
 </section>
 
-<!-- SOBRE / EIXAMPLE -->
 <section class="section about-section">
   <div class="section-inner">
     <span class="section-tag">Quiénes somos</span>
     <h2 class="section-title" style="color:var(--white);">Del <em>Eixample</em><br>al servicio de toda Barcelona</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>En <strong>Clauteck</strong> llevamos más de <strong>15 años</strong> trabajando en Barcelona. Nuestra tienda está en el corazón del <strong>Eixample</strong>, en la Calle Muntaner 127, pero nuestros técnicos cubren toda la ciudad — desde Barceloneta hasta Nou Barris, del Raval hasta Sarrià.</p>
-        <p>Conocemos Barcelona como nuestra casa. Sabemos que el Eixample tiene edificios modernistas con cerraduras clásicas, que en Barceloneta las puertas se cierran solas, que en Gràcia los portales tienen mecanismos antiguos. Esa experiencia local marca la diferencia.</p>
-        <p>No somos una central que subcontrata. <strong>Todos nuestros técnicos son propios</strong>, formados y en constante actualización. Grandes clientes como Samsung, Ray-Ban y Primor confían en Clauteck para su cerrajería en Barcelona.</p>
+        <p>En <strong>Clauteck</strong> llevamos más de <strong>15 años</strong> trabajando en Barcelona. Nuestra tienda está en el corazón del <strong>Eixample</strong>, en la Calle Muntaner 127, pero nuestros técnicos cubren toda la ciudad.</p>
+        <p>Conocemos Barcelona como nuestra casa. Sabemos que el Eixample tiene edificios modernistas con cerraduras clásicas, que en Barceloneta las puertas se cierran solas, que en Gràcia los portales tienen mecanismos antiguos.</p>
+        <p>No somos una central que subcontrata. <strong>Todos nuestros técnicos son propios</strong>, formados y en constante actualización. Somos instaladores oficiales <strong>Nuki Smart Lock Pro</strong> y especialistas en <strong>Mul-T-Lock MTL800</strong>.</p>
         <p style="margin-bottom:0;"><a href="https://clauteck.com/" target="_blank" style="color:var(--gold);font-weight:700;">Visita nuestra web completa en clauteck.com →</a></p>
       </div>
       <div class="about-facts">
-        <div class="fact">
-          <span class="fact-icon">🏅</span>
-          <div><div class="fact-title">+15 años en Barcelona</div><div class="fact-desc">Conocemos cada calle, cada tipo de cerradura y cada situación.</div></div>
-        </div>
-        <div class="fact">
-          <span class="fact-icon">👷</span>
-          <div><div class="fact-title">Técnicos propios</div><div class="fact-desc">Nunca subcontratamos. Formación continua y control de calidad.</div></div>
-        </div>
-        <div class="fact">
-          <span class="fact-icon">🏢</span>
-          <div><div class="fact-title">Samsung · Ray-Ban · Primor</div><div class="fact-desc">Grandes marcas confían en Clauteck para su cerrajería en Barcelona.</div></div>
-        </div>
-        <div class="fact">
-          <span class="fact-icon">📍</span>
-          <div><div class="fact-title">Tienda en Eixample</div><div class="fact-desc">Calle Muntaner 127. Puedes visitarnos o llamar y vamos a ti.</div></div>
-        </div>
-        <div class="fact">
-          <span class="fact-icon">✅</span>
-          <div><div class="fact-title">Garantía en todos los trabajos</div><div class="fact-desc">Precio cerrado. Resultado garantizado. Sin sorpresas.</div></div>
-        </div>
+        <div class="fact"><span class="fact-icon">🏅</span><div><div class="fact-title">+15 años en Barcelona</div><div class="fact-desc">Conocemos cada calle, cada tipo de cerradura y cada situación.</div></div></div>
+        <div class="fact"><span class="fact-icon">👷</span><div><div class="fact-title">Técnicos propios</div><div class="fact-desc">Nunca subcontratamos. Formación continua y control de calidad.</div></div></div>
+        <div class="fact"><span class="fact-icon">🏢</span><div><div class="fact-title">Samsung · Ray-Ban · Primor</div><div class="fact-desc">Grandes marcas confían en Clauteck para su cerrajería en Barcelona.</div></div></div>
+        <div class="fact"><span class="fact-icon">📍</span><div><div class="fact-title">Tienda en Eixample</div><div class="fact-desc">Calle Muntaner 127. Puedes visitarnos o llamar y vamos a ti.</div></div></div>
+        <div class="fact"><span class="fact-icon">✅</span><div><div class="fact-title">Garantía en todos los trabajos</div><div class="fact-desc">Precio cerrado. Resultado garantizado. Sin sorpresas.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OPINIONES -->
+<section class="section blog-section">
+  <div class="section-inner">
+    <span class="section-tag">Blog</span>
+    <h2 class="section-title">Guías y consejos de <em>cerrajería</em></h2>
+    <p class="section-sub">Artículos prácticos para vecinos y negocios de Barcelona.</p>
+    <div class="blog-grid">
+      <a href="post-cerraduras-barcelona-mtl800-nuki.html" class="blog-card"><span class="blog-tag tag-productos">🔒 Productos</span><h3>Mul-T-Lock MTL800 y Nuki Smart Lock Pro en Barcelona</h3><span class="blog-link">Leer →</span></a>
+      <a href="post-cerrajero-urgente-barcelona.html" class="blog-card"><span class="blog-tag tag-urgente">🚨 Urgencias</span><h3>Cerrajero Urgente en Barcelona: Llegamos en 15 Minutos</h3><span class="blog-link">Leer →</span></a>
+      <a href="post-cerrajero-barato-barcelona.html" class="blog-card"><span class="blog-tag tag-precios">💰 Precios</span><h3>Cerrajero Barato en Barcelona: Lo Que Nadie Te Cuenta</h3><span class="blog-link">Leer →</span></a>
+      <a href="post-apertura-programada-barceloneta.html" class="blog-card"><span class="blog-tag tag-consejos">💡 Consejos</span><h3>Me Quedé Fuera de Casa: Cómo No Pagar de Más</h3><span class="blog-link">Leer →</span></a>
+      <a href="post-copia-llaves-barceloneta.html" class="blog-card"><span class="blog-tag tag-barrio">📍 Barceloneta</span><h3>Copia de Llaves en Barceloneta: Rápido y Cerca de Ti</h3><span class="blog-link">Leer →</span></a>
+      <a href="blog.html" class="blog-card" style="background:var(--navy);border-color:var(--navy-mid);justify-content:center;align-items:center;text-align:center;"><span style="font-size:2rem;display:block;margin-bottom:10px;">📚</span><h3 style="color:var(--white);">Ver todos los artículos</h3><span class="blog-link" style="color:var(--gold);">Ir al blog →</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="section reviews-section">
   <div class="section-inner">
     <span class="section-tag">Opiniones</span>
     <h2 class="section-title">Lo que dicen nuestros <em>clientes</em></h2>
     <p class="section-sub">Opiniones reales de vecinos y negocios de Barcelona.</p>
     <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">"Llegó en menos de 30 minutos y su precio era 30-40 euros menos que los demás. Un cerrajero 10."</div>
-        <div class="review-author">— sdk310 · Google</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">"Muy buena atención en una apertura de un piso en el Raval. Nicolás, un súper profesional, serio y correcto."</div>
-        <div class="review-author">— Gemma L. · Google</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">"Clauteck were very responsive and did a great job installing Nuki smartlock. 100% recommend."</div>
-        <div class="review-author">— Alex de H. · Google</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">"Rapidez y muy profesionales. Me hicieron una copia de llaves sin problemas. Muy eficientes."</div>
-        <div class="review-author">— Anna S. · Google</div>
-      </div>
+      <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Llegó en menos de 30 minutos y su precio era 30-40 euros menos que los demás. Un cerrajero 10."</div><div class="review-author">— sdk310 · Google</div></div>
+      <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Muy buena atención en una apertura de un piso en el Raval. Nicolás, un súper profesional, serio y correcto."</div><div class="review-author">— Gemma L. · Google</div></div>
+      <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Clauteck were very responsive and did a great job installing Nuki smartlock. 100% recommend."</div><div class="review-author">— Alex de H. · Google</div></div>
+      <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><div class="review-text">"Rapidez y muy profesionales. Me hicieron una copia de llaves sin problemas. Muy eficientes."</div><div class="review-author">— Anna S. · Google</div></div>
     </div>
-    <p style="text-align:center;margin-top:28px;">
-      <a href="https://www.google.com/maps/place/Cerrajería+Clauteck" target="_blank" style="color:var(--navy-mid);font-weight:700;font-size:.95rem;">→ Ver todas las opiniones en Google Maps</a>
-    </p>
+    <p style="text-align:center;margin-top:28px;"><a href="https://www.google.com/maps/place/Cerrajería+Clauteck" target="_blank" style="color:var(--navy-mid);font-weight:700;font-size:.95rem;">→ Ver todas las opiniones en Google Maps</a></p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" style="background:var(--off-white);">
+<section class="section" style="background:var(--off);">
   <div class="section-inner">
     <span class="section-tag">FAQ</span>
     <h2 class="section-title">Preguntas frecuentes</h2>
     <p class="section-sub">Las dudas más habituales de nuestros clientes en Barcelona.</p>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">¿Cuánto cuesta un cerrajero en Barcelona?</div>
-        <div class="faq-a">En Clauteck siempre damos el precio cerrado antes de desplazarnos. Llama al <a href="tel:+34932477923">932 477 923</a> y te decimos el precio exacto. Sin letra pequeña ni sorpresas.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Cuánto tardan en llegar al Eixample?</div>
-        <div class="faq-a">Nuestra tienda está en Muntaner 127, Eixample. Para ese barrio llegamos en 5-8 minutos. Para el resto de Barcelona, entre 10 y 18 minutos según la zona.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Abren puertas sin romper la cerradura?</div>
-        <div class="faq-a">Sí, es nuestra especialidad. La <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank">apertura sin rotura</a> es el método que usamos siempre que es técnicamente posible. Si hay que cambiar algo, te avisamos antes.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Trabajan en festivos y madrugadas?</div>
-        <div class="faq-a">Sí. Servicio 24 horas los 365 días del año. Domingos, festivos, madrugada — siempre hay un técnico disponible en Barcelona.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Instalan cerraduras inteligentes en Barcelona?</div>
-        <div class="faq-a">Sí. Somos instaladores oficiales <strong>Nuki</strong> en Barcelona. Instalamos <a href="https://clauteck.com/domotica-barcelona/" target="_blank">cerraduras electrónicas y domótica de seguridad</a> para hogares y negocios en toda la ciudad.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">¿Hacen copia de llaves antiguas del Eixample y Barceloneta?</div>
-        <div class="faq-a">Sí. Tenemos maquinaria especializada para duplicar <a href="https://clauteck.com/copia-llaves/" target="_blank">todo tipo de llaves</a>, incluyendo los modelos más antiguos de los edificios históricos de Barcelona.</div>
-      </div>
+      <div class="faq-item"><div class="faq-q">¿Cuánto cuesta un cerrajero en Barcelona?</div><div class="faq-a">En Clauteck siempre damos el precio cerrado antes de desplazarnos. Llama al <a href="tel:+34932477923">932 477 923</a> y te decimos el precio exacto. Sin letra pequeña ni sorpresas.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Cuánto tardan en llegar al Eixample?</div><div class="faq-a">Nuestra tienda está en Muntaner 127. Para el Eixample llegamos en 5-8 minutos. Para el resto de Barcelona, entre 10 y 18 minutos según la zona.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Abren puertas sin romper la cerradura?</div><div class="faq-a">Sí, es nuestra especialidad. La <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank">apertura sin rotura</a> es el método que usamos siempre que es técnicamente posible.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Trabajan en festivos y madrugadas?</div><div class="faq-a">Sí. Servicio 24 horas los 365 días del año. Domingos, festivos, madrugada — siempre hay un técnico disponible en Barcelona.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Instalan el Nuki Smart Lock Pro en Barcelona?</div><div class="faq-a">Sí. Somos instaladores oficiales <strong>Nuki</strong> en Barcelona. Instalamos <a href="https://clauteck.com/domotica-barcelona/" target="_blank">cerraduras inteligentes Nuki Smart Lock Pro</a> para hogares y negocios en toda la ciudad.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Tienen el Mul-T-Lock MTL800 en stock?</div><div class="faq-a">Sí. Tenemos stock del MTL800 y de toda la gama <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank">Mul-T-Lock en Barcelona</a> para instalación el mismo día. Llama al <a href="tel:+34932477923">932 477 923</a>.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-section">
   <h2>¿Necesitas un cerrajero<br>en Barcelona ahora?</h2>
-  <p>Presupuesto cerrado · Llegada en 15 minutos · 24h todos los días<br>
-  <strong style="color:var(--gold);">Tienda en Eixample · Calle Muntaner 127 · Barcelona</strong></p>
+  <p>Presupuesto cerrado · Llegada en 15 minutos · 24h todos los días<br><strong style="color:var(--gold);">Tienda en Eixample · Calle Muntaner 127 · Barcelona</strong></p>
   <div class="cta-btns">
     <a href="tel:+34932477923" class="btn-gold">📞 932 477 923 — Llamar ahora</a>
-    <a href="https://wa.me/34932477923?text=Hola%2C+necesito+un+cerrajero+en+Barcelona" class="btn-wa-hero">💬 WhatsApp urgente</a>
+    <a href="https://wa.me/34932477923?text=Hola%2C+necesito+un+cerrajero+en+Barcelona" class="btn-wa">💬 WhatsApp urgente</a>
     <a href="https://clauteck.com/" target="_blank" class="btn-outline">🌐 clauteck.com</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">CLAUT<span>ECK</span></div>
+    <div class="footer-logo"><a href="index.html"><img src="data:image/png;base64,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" alt="Clauteck"></a></div>
     <div class="footer-links">
+      <a href="blog.html">Blog</a>
       <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank">Apertura puertas</a>
       <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank">Cambio cerraduras</a>
       <a href="https://clauteck.com/copia-llaves/" target="_blank">Copia de llaves</a>
-      <a href="https://clauteck.com/domotica-barcelona/" target="_blank">Cerraduras Nuki</a>
+      <a href="https://clauteck.com/domotica-barcelona/" target="_blank">Nuki Smart Lock</a>
       <a href="https://clauteck.com/puertas-acorazadas/" target="_blank">Puertas acorazadas</a>
-      <a href="https://clauteck.com/" target="_blank">Web principal</a>
+      <a href="https://clauteck.com/" target="_blank">clauteck.com</a>
     </div>
-    <div class="footer-copy">
-      © 2026 Clauteck Key Solutions SL · Cerrajeros 24 horas en Barcelona ·
-      C/ Muntaner 127, 08036 Barcelona ·
-      <a href="tel:+34932477923" style="color:var(--gold);">932 477 923</a> ·
-      <a href="mailto:info@clauteck.com" style="color:var(--gray);">info@clauteck.com</a>
-    </div>
+    <div class="footer-copy">© 2026 Clauteck Key Solutions SL · Cerrajeros 24 horas en Barcelona · C/ Muntaner 127, 08036 Barcelona · <a href="tel:+34932477923" style="color:var(--gold);">932 477 923</a> · <a href="/cdn-cgi/l/email-protection#80e9eee6efc0e3ece1f5f4e5e3ebaee3efed" style="color:var(--gray);"><span class="__cf_email__" data-cfemail="c3aaada5ac83a0afa2b6b7a6a0a8eda0acae">[email&#160;protected]</span></a></div>
   </div>
 </footer>
 
-<!-- SEO TEXT -->
 <div class="seo-text">
   <div class="seo-text-inner">
-    <strong>Clauteck</strong> es tu <strong>cerrajería en Barcelona</strong> de referencia, con tienda en el <strong>Eixample</strong> (Calle Muntaner 127). Ofrecemos <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank">apertura de puertas en Barcelona</a> sin rotura, <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank">cambio de cerraduras y bombines antibumping</a>, <a href="https://clauteck.com/copia-llaves/" target="_blank">copia de llaves</a> para todo tipo de modelos, instalación de <a href="https://clauteck.com/domotica-barcelona/" target="_blank">cerraduras inteligentes Nuki</a> y <a href="https://clauteck.com/puertas-acorazadas/" target="_blank">puertas acorazadas</a>. Cubrimos toda Barcelona: <strong>Eixample, Barceloneta, Gràcia, Sants, Poble Sec, El Raval, Ciutat Vella, El Born, Vila Olímpica, Sarrià, Les Corts, Horta, Sant Andreu, Nou Barris y Sant Martí</strong>. Servicio de <strong>cerrajero urgente 24 horas en Barcelona</strong> disponible todos los días del año. Llama al <a href="tel:+34932477923">932 477 923</a> o visita <a href="https://clauteck.com/" target="_blank">clauteck.com</a>.
-  </div>
-</div>
-
-</body>
-</html>
+    <strong>Clauteck</strong> es tu <strong>cerrajería en Barcelona</strong> de referencia, con tienda en el <strong>Eixample</strong> (Calle Muntaner 127). Instalamos el <strong>Mul-T-Lock MTL800</strong> — bombín antibumping de máxima seguridad — y el <strong>Nuki Smart Lock Pro</strong> como instaladores oficiales en Barcelona. Ofrecemos <a href="https://clauteck.com/apertura-puertas-barcelona/" target="_blank">apertura de puertas en Barcelona</a> sin rotura, <a href="https://clauteck.com/cambio-cerraduras-bombines-antibumping/" target="_blank">cambio de cerraduras y bombines antibumping</a>, <a href="https://clauteck.com/copia-llaves/" target="_blank">copia de llaves</a> y <a href="https://clauteck.com/puertas-acorazadas/" target="_blank">puertas acorazadas</a>. Cubrimos toda Barcelona: <strong>Eixample, Barceloneta, Gràcia, Sants, Poble Sec, El Raval, Ciutat Vella, El Born, Vila Olímpica, Sarrià, Les Corts, Horta, Sant Andreu, Nou Barris y Sant Martí</strong>. Llama al <a href="tel:+34932
